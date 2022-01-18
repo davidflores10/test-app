@@ -11,7 +11,7 @@
               <span style="font-size: 18px;font-weight: bold; padding-top:15px"> Prueba técnica</span>
             </div>
 
-            <form novalidate (ngSubmit)="login()" [formGroup]="loginForm">
+            <form  (ngSubmit)="login()" [formGroup]="loginForm">
               <div class="input_container">
                 <i class="fa fa-user"></i>
                 <input type="text" id="username" placeholder="Email" formControlName="username"/>

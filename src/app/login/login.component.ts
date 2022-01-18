@@ -5,14 +5,6 @@ import {Subscription} from 'rxjs';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../data/services/auth.service';
 
-
-
-
-// interface Credentials {
-//   username: string;
-//   password: string;
-// }
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,9 +14,7 @@ import {AuthService} from '../data/services/auth.service';
 export class LoginComponent implements OnInit, OnDestroy {
 
   loginForm: any;
-
   loading = false;
-
   credentials = {
     username: '',
     password: '',
@@ -36,13 +26,10 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   constructor(
     private auth: AuthService,
-    private router: Router,
   ) {
-    // this.loading = this.auth.loading;
   }
 
   ngOnInit(): any {
-    // this.auth.logout();
     this.loginForm = new FormGroup({
       username: new FormControl(this.credentials.username, [
         Validators.required, Validators.email
