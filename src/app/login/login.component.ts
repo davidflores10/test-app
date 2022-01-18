@@ -21,8 +21,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   loginForm: any;
 
   loading = false;
-  // username: string;
-  // password: string;
 
   credentials = {
     username: '',
@@ -30,10 +28,9 @@ export class LoginComponent implements OnInit, OnDestroy {
   };
 
   // Subscriptions
-  // loginSubscription: Subscription;
+  loginSubscription: Subscription | undefined;
 
   constructor(
-
     private auth: AuthService,
     private router: Router,
   ) {
@@ -56,37 +53,22 @@ export class LoginComponent implements OnInit, OnDestroy {
    * Method for doing the logging in the app
    */
   login(): any {
-    if (this.loginForm.valid){
-      console.log('valid');
-    }else{
-      console.log('false');
+    if (this.loginForm.valid) {
+
+      this.loginSubscription = this.auth.login(this.loginForm.value)
+        .subscribe(
+          (data: any) => {
+            console.log(data);
+          });
+
+    } else {
+      if (this.loginForm.controls.username.status === 'INVALID') {
+        alert('El usuario debe ser un email correcto');
+      }
+      if (this.loginForm.controls.password.status === 'INVALID') {
+        alert('La contraseña debe tener al menos 5 caracteres');
+      }
     }
-    // this.loading = true;
-    // this.loginSubscription = this.auth.login(this.loginForm.value)
-    //   .subscribe(
-    //     (data) => {
-    //       this.loginForm.reset();
-    //       this.loading = false;
-    //       if (data.user.roles[0] === this.roleFinancial) {
-    //         this.router.navigate(['/promotions/list']);
-    //       } else if (data.user.roles[0] === this.roleCommercialNoEdit) {
-    //         this.router.navigate(['/dashboard/historic']);
-    //       } else {
-    //         this.router.navigate(['/tasks']);
-    //       }
-    //       this.notifService.setNotification(this.commonService.getTranslation('LOGIN.NOTIF.SUCCESS'), 'success', 15000);
-    //       if (data.user && data.user.notifications) {
-    //         this.getAlerts(data.user.id);
-    //       }
-    //     },
-    //     () => {
-    //       if (this.loginForm.invalid) {
-    //         this.notifService.setNotification(this.commonService.getTranslation('LOGIN.NOTIF.PENDING'), 'loginError', 15000);
-    //       } else {
-    //         this.notifService.setNotification(this.commonService.getTranslation('LOGIN.NOTIF.ERROR'), 'loginError', 15000);
-    //       }
-    //     // }
-    //   );
   }
 
 
