@@ -69,7 +69,6 @@
           color: black;
           padding-left: 25px;
 
-
           &:focus {
             background: transparent;
             padding: 0;
@@ -80,29 +79,9 @@
             padding-left: 25px;
           }
         }
-
         input::placeholder {
           color: #787878;
           font-weight: 400;
-        }
-
-        img.input_icon {
-          position: absolute;
-          opacity: 0.5;
-
-        }
-
-        img.input_icon.username {
-          max-width: 28px;
-          top: 11px;
-          left: 7px;
-
-        }
-
-        img.input_icon.lock {
-          max-width: 34px;
-          top: 9px;
-          left: 4px;
         }
 
         button {
