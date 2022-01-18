@@ -4,7 +4,7 @@
       <div class="d-block">
         <div class="row">
           <div class="col-12 text-center">
-            <div class="col-12 text-center">
+            <div>
               <img class="logo" [src]="'./assets/img/logo.jpg'" [alt]="'Cat logo'" />
             </div>
 
@@ -12,14 +12,14 @@
 
             <form novalidate (ngSubmit)="login()" [formGroup]="loginForm">
               <div class="input_container">
-                <input matInput type="text" id="username" placeholder="Email" formControlName="username" />
+                <input  type="text" id="username" placeholder="Email" formControlName="username" />
               </div>
               <div class="input_container">
                 <input type="password" id="password" placeholder="Contraseña" formControlName="password" />
               </div>
               <div class="input_container" >
 <!--                <button type="submit" class="pointer">{{ 'LOGIN.ACCESS' | translate }}</button>-->
-                <div class="row">
+                <div class="row" style="padding-top:10%">
                   <div class="col-6" style="text-align:left">
                     <span style="font-size: 16px;font-weight: bold;">Recordar</span>
                   </div>

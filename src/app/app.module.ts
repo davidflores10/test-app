@@ -8,6 +8,7 @@ import {AuthService} from './data/services/auth.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
+    MatInputModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
