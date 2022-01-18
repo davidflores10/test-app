@@ -6,6 +6,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../data/services/auth.service';
 
 
+
+
 // interface Credentials {
 //   username: string;
 //   password: string;
@@ -25,7 +27,8 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   credentials = {
     username: '',
-    password: ''
+    password: '',
+    remember: false
   };
 
   // Subscriptions
@@ -46,7 +49,9 @@ export class LoginComponent implements OnInit, OnDestroy {
       ]),
       password: new FormControl(this.credentials.password, [
         Validators.required, Validators.minLength(5)
-      ])
+      ]),
+      remember: new FormControl(this.credentials.remember, [
+    ])
     });
   }
 

@@ -23,36 +23,41 @@
       margin-left: -175px;
       text-align: center;
       margin-right: 15px;
-      height: 60vh;
+      height: auto;
       width: 100%;
       max-width: 350px;
       padding: 0px 35px;
       justify-content: center;
-      padding-top: 10vh;
+      padding-top: 8vh;
       background: white;
 
       .logo {
-        //margin-bottom: 60px;
-        height: 100%;
-        width: 36%;
-        //background-image: url('../assets/img/background.jpg');
+        height: 116px;
+        width: 130px;
+        object-fit: cover;
+        object-position: left;
       }
+
       form {
         margin: auto;
         width: 100%;
         max-width: 650px;
         border-radius: 20px;
-        padding-top: 20px;
+        padding-top: 7vh;
       }
 
-      .submit-btn{
-        padding-top:5vh;
+      .submit-btn {
+        padding-top: 4vh;
+        padding-bottom: 5vh;
+
         .enter-btn {
           width: 60%;
         }
       }
 
       .input_container {
+        position: relative;
+
         input {
           width: 100%;
           height: 40px;
@@ -62,16 +67,20 @@
           border-radius: 0;
           border-bottom: 1px solid grey;
           color: black;
+          padding-left: 25px;
 
-          &:focus{
-            background:transparent;
+
+          &:focus {
+            background: transparent;
             padding: 0;
             border: none;
             border-radius: 0;
-            border-bottom: 2px solid grey;
+            border-bottom: 1px solid blue;
             outline: none;
+            padding-left: 25px;
           }
         }
+
         input::placeholder {
           color: #787878;
           font-weight: 400;
@@ -109,6 +118,13 @@
           text-decoration: underline;
           cursor: pointer;
         }
+
+        i {
+          position: absolute;
+          top: 12px;
+          font-size: 20px;
+          color: #959fab;
+        }
       }
 
       label {
@@ -119,9 +135,11 @@
     }
 
 
-    @media (max-height: 630px) {
+    @media (max-width: 960px) {
       .login_form {
         padding-top: 20vh;
+        height: 100%;
+        top: 0;
       }
     }
 
@@ -137,7 +155,14 @@
 
     }
   }
+
+  .title-container {
+    position: relative;
+    top: 8%;
+  }
 }
+
+
 
 
 
