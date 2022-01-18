@@ -8,9 +8,8 @@
               <img class="logo" [src]="'./assets/img/logo.jpg'" [alt]="'Cat logo'"/>
             </div>
             <div class="title-container">
-              <span style="font-size: 18px;font-weight: bold; padding-top:15px"> Prueba técnica</span>
+              <span> Prueba técnica</span>
             </div>
-
             <form  (ngSubmit)="login()" [formGroup]="loginForm">
               <div class="input_container">
                 <i class="fa fa-user"></i>
@@ -21,22 +20,19 @@
                 <input type="password" id="password" placeholder="Contraseña" formControlName="password"/>
               </div>
               <div class="input_container">
-                <!--                <button type="submit" class="pointer">{{ 'LOGIN.ACCESS' | translate }}</button>-->
-                <div class="row" style="padding-top:10%">
-                  <div class="col-6" style="text-align:left">
-                    <span style="font-size: 16px;font-weight: bold;">Recordar</span>
+                <div class="row remember-container" >
+                  <div class="col-6 left" >
+                    <span class="remember-title">Recordar</span>
                   </div>
-                  <div class="col-6" style="text-align:right">
+                  <div class="col-6 right" >
                     <mat-slide-toggle color="accent" formControlName="remember"></mat-slide-toggle>
                   </div>
                 </div>
-
               </div>
               <div class="input_container submit-btn">
                 <button type="button" class="btn btn-outline-primary rounded-pill enter-btn" (click)="login()">Acceder
                 </button>
               </div>
-
             </form>
           </div>
         </div>
